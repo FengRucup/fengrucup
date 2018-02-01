@@ -1,0 +1,4 @@
+#Thu Jan 25 12:53:48 CST 2018
+base.0=/Users/hy/Downloads/My_Application/app/build/intermediates/transforms/dexMerger/debug/0
+renamed.0=classes.dex
+file.0=/Users/hy/Downloads/My_Application/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex

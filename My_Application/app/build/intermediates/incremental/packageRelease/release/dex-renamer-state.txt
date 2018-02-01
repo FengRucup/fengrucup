@@ -1,0 +1,4 @@
+#Tue Jan 23 20:28:46 CST 2018
+base.0=E\:\\fengru2\\My_Application\\app\\build\\intermediates\\transforms\\dex\\release\\0
+renamed.0=classes.dex
+file.0=E\:\\fengru2\\My_Application\\app\\build\\intermediates\\transforms\\dex\\release\\0\\classes.dex

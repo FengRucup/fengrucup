@@ -1,0 +1,4 @@
+#Tue Jan 23 19:51:55 CST 2018
+base.0=E\:\\fengru2\\My_Application\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\19
+renamed.0=classes.dex
+file.0=E\:\\fengru2\\My_Application\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\19\\classes.dex
