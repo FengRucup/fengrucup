@@ -1,16 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/hy/Downloads/My_Application/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
+            "outputFile": "D:\\fenggit\\My_Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/hy/Downloads/My_Application/app/src/main/res/values-w820dp/dimens.xml",
+                    "source": "D:\\fenggit\\My_Application\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "4",
-                        "startOffsets": "291",
+                        "startOffsets": "295",
                         "endColumns": "57",
-                        "endOffsets": "344"
+                        "endOffsets": "348"
                     },
                     "to": {
                         "startLines": "2",

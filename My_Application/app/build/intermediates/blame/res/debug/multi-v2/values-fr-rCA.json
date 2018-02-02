@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/hy/Downloads/My_Application/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fr-rCA/values-fr-rCA.xml",
+            "outputFile": "D:\\fenggit\\My_Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fr-rCA\\values-fr-rCA.xml",
             "map": [
                 {
-                    "source": "/Users/hy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/f283187c056bce3f3ec5c9bea3bfaa56/res/values-fr-rCA/values-fr-rCA.xml",
+                    "source": "C:\\Users\\hainan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\64d90d7048be073e2da0cca6df96f120\\res\\values-fr-rCA\\values-fr-rCA.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
