@@ -25,4 +25,16 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    // https://mvnrepository.com/artifact/org.openimaj/core
+   // compile group: 'org.openimaj', name: 'core', version: '1.3.6'
+    // https://mvnrepository.com/artifact/org.openimaj/xuggle-video
+    //compile group: 'org.openimaj', name: 'xuggle-video', version: '1.3.6'
+    // https://mvnrepository.com/artifact/org.openimaj/audio-processing
+    //compile group: 'org.openimaj', name: 'audio-processing', version: '1.3.6'
+    // https://mvnrepository.com/artifact/org.openimaj/demos
+    //compile group: 'org.openimaj', name: 'demos', version: '1.3.6'
+    // https://mvnrepository.com/artifact/com.github.wendykierp/JTransforms
+    //compile group: 'com.github.wendykierp', name: 'JTransforms', version: '3.1'
+    // https://mvnrepository.com/artifact/junit/junit
+    //testCompile group: 'junit', name: 'junit', version: '4.12'
 }

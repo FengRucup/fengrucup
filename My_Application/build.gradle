@@ -18,9 +18,15 @@ buildscript {
 
 allprojects {
     repositories {
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        maven{ url 'https://mvnrepository.com/artifact/org.openimaj/xuggle-video'}
+        maven{ url 'https://mvnrepository.com/artifact/org.openimaj/audio-processing'}
+        maven{ url 'https://mvnrepository.com/artifact/org.openimaj/demos'}
+        maven{ url 'https://mvnrepository.com/artifact/com.github.wendykierp/JTransforms'}
+        maven{ url 'https://mvnrepository.com/artifact/junit/junit'}
+        maven{ url 'http://xuggle.googlecode.com/svn/trunk/repo/share/java/'}
         google()
         jcenter()
-        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
     }
 }
 
