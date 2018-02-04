@@ -1,6 +1,7 @@
 package com.example.hainan.my_application;
 
 
+
 import android.support.annotation.NonNull;
 
 import java.util.ArrayList;
@@ -11,68 +12,95 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
+import Jama.Matrix;
+
 public class Gauss {
     public int M=10;
-    public ArrayList<Float[]> midpoint = new ArrayList<>();
-    public Map gaussmix(Float x[][],float c,float l,int m0,String v0){
+    public double[][] midpoint;
+    double[][][] lists;
+    public Matrix[][] initPara(double x[][],float c,float l,int m0,String v0){
         int k =0;
         int mid;
         double min;
         int minid;
         boolean breakflag= true;
         double temp;
-        ArrayList<Float[]>[] lists = new ArrayList[M];
-        HashMap<Integer,ArrayList<Float[]>> w = new HashMap<>();
+
         Random random = new Random();
         for(int i=0;i<M;i++) {
-            mid = random.nextInt(x.length);
-            while(midpoint.contains(mid)){
-                mid = random.nextInt(x.length);
-            }
-            midpoint.add(x[mid]);
-            lists[i] = new ArrayList<>();
-            //lists[i].add(x[mid]);
-            w.put(i,lists[i]);
+            midpoint[i] = x[i];
         }
         while (true) {
             breakflag =true;
+            lists = new double[M][][];
+            int tcount =0 ;
             for (int n = 0; n < x.length; n++) {
                 min = Double.MAX_VALUE;
                 minid = 0;
                 for (int i = 0; i < M; i++) {
                     temp = 0;
                     for (int j = 0; j < x[0].length; j++) {
-                        temp = (temp + Math.pow((midpoint.get(i)[j] - x[n][j]), 2));
+                        temp = (temp + Math.pow((midpoint[i][j] - x[n][j]), 2));
                     }
                     if (temp < min) {
                         min = temp;
                         minid = i;
                     }
                 }
-                lists[minid].add(x[n]);
+                lists[minid][tcount++] = x[n];
             }
-            float temp2;
+            double temp2;
             for (int i = 0; i < M; i++) {
                 for (int n = 0; n < x[0].length; n++) {
                     temp2 = 0;
-                    for (int j = 0; j < lists[i].size(); j++) {
-                        temp2 = lists[i].get(j)[n] + temp2;
+                    for (int j = 0; j < lists[i].length; j++) {
+                        temp2 = lists[i][j][n] + temp2;
                     }
-                    Float[] f = midpoint.get(i);
-                    if(f[n]!=temp2/lists[i].size()){
+                    double[] f = midpoint[i];
+                    if(f[n]!=temp2/lists[i].length){
                         breakflag = false;
                     }
-                    f[n] =  temp2 / lists[i].size();
-                    midpoint.set(i, f);
+                    f[n] =  temp2 / lists[i].length;
+                    midpoint[i] = f;
                 }
             }
             if(breakflag){
                 break;
             }
         }
-        return w;
+        Matrix[] uarray = new Matrix[M];
+        Matrix[] simaarray = new Matrix[M];
+        Matrix[] weights = new Matrix[M];
+        Matrix[][] ret = new Matrix[3][];
+
+        for(int i=0;i<M;i++){
+            double[][] u = new double[1][x[0].length];
+            double[][] sigma = new double[x[0].length][x[0].length];
+            double[][] weight = new double[1][1];
+            for(int j = 0;j<x[0].length;j++){
+                u[0][j]=0;
+                for(int n=0;n<lists[i].length;n++){
+                    u[0][j] = u[0][j] + lists[i][n][j];
+                }
+                u[0][j] = u[0][j]/lists[i].length;
+                sigma[j][j] = 0;
+                for(int n=0;n<lists[i].length;n++){
+                    sigma[j][j] = sigma[j][j] + (lists[i][n][j] - u[0][j])*(lists[i][n][j] - u[0][j]);
+                }
+                sigma[j][j] = sigma[j][j]/lists[i].length;
+            }
+            uarray[i] = new Matrix(u);
+            simaarray[i] = new Matrix(sigma);
+            weight[0][0] = lists[i].length/x.length;
+            weights[i] = new Matrix(weight);
+        }
+        ret[0] = uarray;
+        ret[1] = simaarray;
+        ret[2] = weights;
+        return ret;
     }
     public Map gaussmix(float x[][],float c,float l,float m0[][],float v0[][],float w0[]){
+        
         return new Map() {
             @Override
             public int size() {

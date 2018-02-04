@@ -113,6 +113,7 @@
     <orderEntry type="jdk" jdkName="Android API 26 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="com.android.support:support-media-compat-26.1.0" level="project" />
+    <orderEntry type="library" name="__local_aars__:D.\fenggit\My_Application\app\libs\Jama-1.0.3.jar:unspecified@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="junit:junit:4.12@jar" level="project" />
     <orderEntry type="library" name="android.arch.lifecycle:common:1.0.0@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="com.android.support.test.espresso:espresso-core-3.0.1" level="project" />
