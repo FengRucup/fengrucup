@@ -390,7 +390,7 @@ public class MFCC {
         return dfilterOutput;
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
         int nnumberofFilters = 24;
         int nlifteringCoefficient = 22;
@@ -415,7 +415,7 @@ public class MFCC {
                 nlifteringCoefficient,
                 oisZeroThCepstralCoefficientCalculated);
 
-        System.out.println(mfcc.toString());
+        System.out.println("start " + mfcc.toString() + "end");
 
         //simulate a frame of speech
         double[] x = new double[160];
@@ -427,7 +427,7 @@ public class MFCC {
 
         }
 
-    }
+    }*/
 
 
 } // end of class
