@@ -1,7 +1,7 @@
 package com.example.hainan.my_application;
 
 /**
- * Created by linto on 2018/2/6.
+ * Created by lin on 2018/2/6.
  */
 // filename: WaveFileReader.java
 // RobinTang
