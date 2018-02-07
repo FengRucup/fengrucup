@@ -108,15 +108,7 @@ public class gmm {
                 }
                 sum=sum+Math.log(sum1);
             }
-            System.out.println("count="+count+"   "+sum);
             now=sum;
-            sigmaarray[0].print(T,T);
-            uarray[0].print(T,T);
-            System.out.println(weights[0]);
-            sigmaarray[1].print(T, T);
-            uarray[1].print(T, T);
-            System.out.println(weights[1]);
-            System.out.println("now="+now+" pre="+pre+"  "+(now>pre));
         }while (Math.abs(now)!=Math.abs(pre));
         Matrix[][] gmmret = new Matrix[3][];
         gmmret[0] = uarray;
