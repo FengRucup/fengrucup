@@ -10,7 +10,7 @@ public class Chaextractor {
 
         int k = 0;//k，i为临时变量
         int i = 0;
-        wavRead test1 = new wavRead("D:\\fengru\\fengrucup-huyang\\training\\3130000130-W1\\N2.wav");//读取wav文件
+        wavRead test1 = new wavRead("D:\\fengru\\data\\data_thchs30\\data\\A2_0.wav");//读取wav文件
         if (!test1.isSuccess()) {
             System.out.println("read wav failed!");
             System.exit(1);

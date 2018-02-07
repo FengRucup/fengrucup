@@ -2,7 +2,7 @@ package com.example.hainan.my_application;
 
 /**Calculates the DFT using a split-radix Fast Fourier Transform algorithm.
  * @author Junan Zhang
- * @modify Lin ziwei
+ * @modify Lin
  */
 
 public final class FFT {
