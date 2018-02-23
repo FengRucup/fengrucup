@@ -28,6 +28,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ActivityMiniRecog extends AppCompatActivity implements EventListener {
+    AudioRecorder audioRecorder = new AudioRecorder();
+
     protected String txtResult = "";
     ImageButton btnspeak;
     ImageButton btnspeak2;
@@ -55,9 +57,18 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
         json = new JSONObject(params).toString();
         asr.send(event, json, null, 0, 0);
     }
-
+    private void start2(){
+        if (audioRecorder.getStatus() == AudioRecorder.Status.STATUS_NO_READY) {
+            //初始化录音
+            String fileName = "test";
+            audioRecorder.createDefaultAudio(fileName);
+            audioRecorder.startRecord(null);
+        }
+    }
     private void stop() {
-        asr.send(SpeechConstant.ASR_STOP, null, null, 0, 0); //
+       // asr.send(SpeechConstant.ASR_STOP, null, null, 0, 0); //
+        audioRecorder.stopRecord();
+
     }
 
     private void loadOfflineEngine() {
@@ -77,6 +88,8 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
         setContentView(R.layout.activity_main2);
         initView();
         initPermission();
+        audioRecorder = AudioRecorder.getInstance();
+
         asr = EventManagerFactory.create(this, "asr");
         asr.registerListener(this); //  EventListener 中 onEvent方法
         btnspeak.setOnClickListener(new View.OnClickListener() {
@@ -87,8 +100,8 @@ public class ActivityMiniRecog extends AppCompatActivity implements EventListene
 
                 chronometer.setBase(SystemClock.elapsedRealtime());
                 chronometer.start();
-                start();
-
+                //start();
+                start2();
             }
         });
         btnspeak2.setOnClickListener(new View.OnClickListener() {
